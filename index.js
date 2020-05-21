@@ -1,11 +1,17 @@
 const mongoose = require('mongoose');
+
+// connect to DB
 const db = mongoose.connect('mongodb://localhost:27017/myImportantDates', {
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
 });
 
-mongoose.Promise = global.Promise;
+// import User MODEL
+const User = require('./model/user')
 
-console.log("hello")
+// mongoose.Promise = global.Promise;
+
+
+
 
 
