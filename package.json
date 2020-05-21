@@ -1,0 +1,29 @@
+{
+  "name": "myimportantdates",
+  "version": "1.0.0",
+  "description": "A app that helps you track and also reminds the other party of your important Dates!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chanwkkk/myImportantDates.git"
+  },
+  "keywords": [
+    "tracker",
+    "dates",
+    "events"
+  ],
+  "author": "yingqi chen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chanwkkk/myImportantDates/issues"
+  },
+  "homepage": "https://github.com/chanwkkk/myImportantDates#readme",
+  "dependencies": {
+    "commander": "^5.1.0",
+    "inquirer": "^7.1.0",
+    "mongoose": "^5.9.15"
+  }
+}
