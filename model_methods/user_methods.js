@@ -34,6 +34,17 @@ const findUserByEmail = (email) => {
 
 
 // update a user
+const updateUser = (email,user) => {
+    User.findOneAndUpdate({email:email},user,{new: true}, (err,doc) =>{
+      if(err){
+          console.log(err);
+          return
+      }else{
+          console.log(doc)
+      }
+      mongoose.disconnect()
+    })
+}
 
 
 // remove a user
@@ -41,5 +52,6 @@ const findUserByEmail = (email) => {
 module.exports = {
     addUser,
     listAllUsers,
-    findUserByEmail
+    findUserByEmail,
+    updateUser
 }

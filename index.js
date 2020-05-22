@@ -12,18 +12,26 @@ const db = mongoose.connect('mongodb://localhost:27017/myImportantDates', {
 const User = require('./model/user')
 
 // import user methods
-const {addUser,listAllUsers,findUserByEmail} = require('./model_methods/user_methods')
+const {addUser,listAllUsers,findUserByEmail,updateUser} = require('./model_methods/user_methods')
 
 // testing newly added methods
 const userOptions = {
-    name: "user",
+    name: "user222",
+    email: "email@ee.com",
+    password: "123"
+}
+
+const newUserOptions = {
+    name: "user3",
     email: "email@ee.com",
     password: "123"
 }
 
 // let user = addUser(userOptions)
 // listAllUsers()
-console.log(findUserByEmail("email@ee.com"))
+// console.log(findUserByEmail("email@ee.com"))
+
+console.log(updateUser("email@ee.com",newUserOptions))
 
 
 
