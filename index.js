@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// mongoose.Promise = global.Promise;
 
 // connect to DB
 const db = mongoose.connect('mongodb://localhost:27017/myImportantDates', {
@@ -15,17 +14,17 @@ const User = require('./model/user')
 const {addUser,listAllUsers,findUserByEmail,updateUser,deleteUser} = require('./model_methods/user_methods')
 
 // testing newly added methods
-const userOptions = {
-    name: "user3",
-    email: "email@ee.com",
-    password: "123"
-}
+// const userOptions = {
+//     name: "user3",
+//     email: "email@ee.com",
+//     password: "123"
+// }
 
-const newUserOptions = {
-    name: "user4",
-    email: "email@ee.com",
-    password: "123"
-}
+// const newUserOptions = {
+//     name: "user4",
+//     email: "email@ee.com",
+//     password: "123"
+// }
 
 // let user = addUser(userOptions)
 // // listAllUsers()
