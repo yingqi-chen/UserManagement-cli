@@ -12,7 +12,7 @@ const db = mongoose.connect('mongodb://localhost:27017/myImportantDates', {
 const User = require('./model/user')
 
 // import user methods
-const {addUser,listAllUsers,findUserByEmail,updateUser} = require('./model_methods/user_methods')
+const {addUser,listAllUsers,findUserByEmail,updateUser,deleteUser} = require('./model_methods/user_methods')
 
 // testing newly added methods
 const userOptions = {
@@ -28,10 +28,10 @@ const newUserOptions = {
 }
 
 // let user = addUser(userOptions)
-// listAllUsers()
-// console.log(findUserByEmail("email@ee.com"))
+// // listAllUsers()
+// // console.log(findUserByEmail("email@ee.com"))
 
-console.log(updateUser("email@ee.com",newUserOptions))
+// console.log(deleteUser("email@ee.com"))
 
 
 

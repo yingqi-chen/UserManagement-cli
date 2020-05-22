@@ -33,7 +33,7 @@ const findUserByEmail = (email) => {
 }
 
 
-// update a user
+// update a user and make sure pass {new:true} option so that the doc in callback return the doc after updated
 const updateUser = (email,user) => {
     User.findOneAndUpdate( { email }, user, { new: true }, (err,doc) =>{
       if(err){
@@ -48,7 +48,17 @@ const updateUser = (email,user) => {
 
 
 // remove a user
+const deleteUser = email => {
+   User.deleteOne( { email },(err,res) =>{
+     if(err){
+        console.log(err);
+        return           
+    }
+       console.log("Deleted Successfully.");
+       mongoose.disconnect()
+       })
 
+}
 
 module.exports = {
     addUser,
