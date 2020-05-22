@@ -35,7 +35,7 @@ const findUserByEmail = (email) => {
 
 // update a user
 const updateUser = (email,user) => {
-    User.findOneAndUpdate({email:email},user,{new: true}, (err,doc) =>{
+    User.findOneAndUpdate( { email }, user, { new: true }, (err,doc) =>{
       if(err){
           console.log(err);
           return
@@ -49,9 +49,11 @@ const updateUser = (email,user) => {
 
 // remove a user
 
+
 module.exports = {
     addUser,
     listAllUsers,
     findUserByEmail,
-    updateUser
+    updateUser,
+    deleteUser
 }

@@ -16,13 +16,13 @@ const {addUser,listAllUsers,findUserByEmail,updateUser} = require('./model_metho
 
 // testing newly added methods
 const userOptions = {
-    name: "user222",
+    name: "user3",
     email: "email@ee.com",
     password: "123"
 }
 
 const newUserOptions = {
-    name: "user3",
+    name: "user4",
     email: "email@ee.com",
     password: "123"
 }
