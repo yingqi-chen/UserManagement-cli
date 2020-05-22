@@ -9,6 +9,15 @@ const addUser = (name) =>{
        });
 }
 
+const listAllUsers = () =>{
+    User.find().then((users)=>{
+        console.log("Totally there are " + users.length + " users.");
+        console.log(users);
+        mongoose.disconnect()
+    })
+}
+
 module.exports = {
-    addUser
+    addUser,
+    listAllUsers
 }
