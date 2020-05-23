@@ -50,22 +50,7 @@ program
 
 program.parse(process.argv)
 
-// const userOptions = {
-//     name: "user1",
-//     email: "email@ee.com",
-//     password: "123"
-// }
 
-// const newUserOptions = {
-//     name: "user5",
-//     email: "email@ee.com",
-//     password: "123"
-// }
-
-// let user = addUser(userOptions)
-// console.log(user)
-
-// listAllUsers()
 
 
   
