@@ -3,11 +3,16 @@ const User = require('../model/user')
 
 // create a user
 const addUser = (user) =>{
+    console.log(user)
    User.create(user).then(
        user=>{
-           console.log(user),
+           console.info(user)
            mongoose.disconnect()
+       }).catch(err => {
+           console.log(err)
        });
+
+
 }
 
 // list all users
@@ -15,8 +20,8 @@ const listAllUsers = () =>{
     User.find().then((users)=>{
         console.log("Totally there are " + users.length + " users.");
         console.log(users);
-        mongoose.disconnect()
-    })
+        mongoose.disconnect();
+    }).then(()=>process.exit())
 }
 
 // find one user

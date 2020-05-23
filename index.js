@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 
 
 // connect to DB
@@ -13,6 +14,7 @@ const User = require('./model/user')
 // import user methods
 const {addUser,listAllUsers,findUserByEmail,updateUser,deleteUser} = require('./model_methods/user_methods')
 
+module.exports = db
 // testing newly added methods
 // const userOptions = {
 //     name: "user3",
