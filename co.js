@@ -37,15 +37,17 @@ program
    .command('add')
    .alias('a')
    .description('Add a user')
-   .action(
+   .action(()=>{
     inquirer.prompt(questions)
     .then( answers => {
-       console.info(answers)
+       addUser(answers)
+     }).then(() => {
+       process.exit()
      })
      .catch(err =>{
        console.log(error) 
      })
-   )
+    })
 
 
 program.parse(process.argv)
