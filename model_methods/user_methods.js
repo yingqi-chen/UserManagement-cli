@@ -3,16 +3,12 @@ const User = require('../model/user')
 
 // create a user
 const addUser = (user) =>{
-    console.log(user)
-   User.create(user).then(
-       user=>{
-           console.info(user)
+   User.create(user).then((res)=>{
+           console.log(res)
            mongoose.disconnect()
        }).catch(err => {
            console.log(err)
        });
-
-
 }
 
 // list all users

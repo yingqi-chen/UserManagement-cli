@@ -49,6 +49,16 @@ program
      })
     })
 
+program
+  .command('find <email>')
+  .alias('f')
+  .description('find a user through email')
+  .action((email)=>{
+     findUserByEmail(email)
+  })
+
+  
+
 
 program.parse(process.argv)
 
