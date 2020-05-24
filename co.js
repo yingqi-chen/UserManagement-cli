@@ -73,6 +73,14 @@ program
      })
     })
 
+program
+  .command('delete <email>')
+  .alias('d')
+  .description('delete a user through email')
+  .action((email)=>{
+      deleteUser(email)
+  })
+
 
 program.parse(process.argv)
 
