@@ -1,15 +1,27 @@
 const mongoose = require('mongoose')
 const User = require('../model/user')
+mongoose.Promise = global.Promise;
+
+
+// connect to DB
+const db = mongoose.connect('mongodb://localhost:27017/myImportantDates', {
+    useNewUrlParser: true, 
+    useUnifiedTopology: true, 
+});
 
 // create a user
 const addUser = (user) =>{
-   User.create(user).then((res)=>{
-           console.log(res)
-           mongoose.disconnect()
-       }).catch(err => {
-           console.log(err)
-       });
-}
+    let newUser = new User(user)
+    newUser.save(function(err){
+       console.log(newUser.errors)
+       return;
+    })
+    console.log(newUser)
+    mongoose.disconnect()
+
+}//that means it get created but not connected to the db?????why????????
+
+
 
 // list all users
 const listAllUsers = () =>{
@@ -61,6 +73,8 @@ const deleteUser = email => {
 
 }
 
+
+
 module.exports = {
     addUser,
     listAllUsers,
@@ -68,3 +82,4 @@ module.exports = {
     updateUser,
     deleteUser
 }
+

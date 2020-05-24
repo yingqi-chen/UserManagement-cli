@@ -1,15 +1,95 @@
-const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
+const { program } = require('commander');
+const {addUser,listAllUsers,findUserByEmail,updateUser,deleteUser} = require('./model_methods/user_methods')
+const inquirer = require('inquirer')
+
+const questions = [
+  {
+    type: 'input',
+    name: 'name',
+    message: 'user name'
+  },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'user email'
+    },
+    {
+      type: 'input',
+      name: 'password',
+      message: 'user password'
+    },
+  ];
 
 
-// connect to DB
-const db = mongoose.connect('mongodb://localhost:27017/myImportantDates', {
-    useNewUrlParser: true, 
-    useUnifiedTopology: true, 
-});
+program
+.version('0.0.1')
+.description("testing");
 
 
-module.exports = db
+program
+    .command('list')
+    .alias('l')
+    .description('List all users')
+    .action(()=>listAllUsers())
+
+program
+   .command('add')
+   .alias('a')
+   .description('Add a user')
+   .action(()=>{
+    inquirer.prompt(questions)
+    .then( answers => {
+       addUser(answers)
+     }).then(() => {
+       process.exit()
+     })
+     .catch(err =>{
+       console.log(error) 
+     })
+    })
+
+program
+  .command('find <email>')
+  .alias('f')
+  .description('find a user through email')
+  .action((email)=>{
+     findUserByEmail(email)
+  })
+
+program
+  .command('update <email>')
+  .alias('u')
+  .description('update a user through email')
+  .action((email)=>{
+    inquirer.prompt(questions)
+    .then( ( email,answers ) => {
+       updateUser(email, answers)
+     }).then(() => {
+       process.exit()
+     })
+     .catch(err =>{
+       console.log(error) 
+     })
+    })
+
+program
+  .command('delete <email>')
+  .alias('d')
+  .description('delete a user through email')
+  .action((email)=>{
+      deleteUser(email)
+  })
+
+
+program.parse(process.argv)
+
+
+
+
+  
+
+
+
 
 
 
