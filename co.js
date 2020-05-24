@@ -57,7 +57,21 @@ program
      findUserByEmail(email)
   })
 
-  
+program
+  .command('update <email>')
+  .alias('u')
+  .description('update a user through email')
+  .action((email)=>{
+    inquirer.prompt(questions)
+    .then( ( email,answers ) => {
+       updateUser(email, answers)
+     }).then(() => {
+       process.exit()
+     })
+     .catch(err =>{
+       console.log(error) 
+     })
+    })
 
 
 program.parse(process.argv)
