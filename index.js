@@ -40,8 +40,6 @@ program
     inquirer.prompt(questions)
     .then( answers => {
        addUser(answers)
-     }).then(() => {
-       process.exit()
      })
      .catch(err =>{
        console.log(error) 

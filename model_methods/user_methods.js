@@ -4,22 +4,23 @@ mongoose.Promise = global.Promise;
 
 
 // connect to DB
-const db = mongoose.connect('mongodb://localhost:27017/myImportantDates', {
+mongoose.connect('mongodb://localhost:27017/myImportantDates', {
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
-});
+}).then(()=>console.log("connecting..."));
 
 // create a user
 const addUser = (user) =>{
     let newUser = new User(user)
-    newUser.save(function(err){
-       console.log(newUser.errors)
-       return;
+    newUser.save((err, result) => {
+        if (err) console.log(err);
+        else {
+            console.log(result);
+            mongoose.disconnect();
+        }
     })
-    console.log(newUser)
-    mongoose.disconnect()
+}
 
-}//that means it get created but not connected to the db?????why????????
 
 
 
