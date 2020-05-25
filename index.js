@@ -49,7 +49,7 @@ program
 program
   .command('find <email>')
   .alias('f')
-  .description('find a user through email')
+  .description('Find a user through email')
   .action((email)=>{
      findUserByEmail(email)
   })
@@ -57,7 +57,7 @@ program
 program
   .command('update <email>')
   .alias('u')
-  .description('update a user through email')
+  .description('Update a user through email')
   .action((email)=>{
     inquirer.prompt(questions)
     .then( answers  => {
@@ -71,7 +71,7 @@ program
 program
   .command('delete <email>')
   .alias('d')
-  .description('delete a user through email')
+  .description('Delete a user through email')
   .action((email)=>{
       deleteUser(email)
   })
