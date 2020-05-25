@@ -23,7 +23,7 @@ const questions = [
 
 program
 .version('0.0.1')
-.description("testing");
+.description("Use command to create, read, update and delete users.");
 
 
 program
