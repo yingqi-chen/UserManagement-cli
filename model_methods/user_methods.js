@@ -7,12 +7,13 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/myImportantDates', {
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
-}).then(()=>console.log("connecting..."));
+});
 
 // create a user
 const addUser = (user) =>{
     let newUser = new User(user)
     newUser.save((err, result) => {
+        console.log("inside save method")
         if (err) console.log(err);
         else {
             console.log(result);
@@ -20,7 +21,6 @@ const addUser = (user) =>{
         }
     })
 }
-
 
 
 
