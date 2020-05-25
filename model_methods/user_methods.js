@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const User = require('../model/user')
-mongoose.Promise = global.Promise;
 
 
 // connect to DB
