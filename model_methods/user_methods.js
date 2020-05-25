@@ -48,14 +48,14 @@ const findUserByEmail = (email) => {
 
 // update a user and make sure pass {new:true} option so that the doc in callback return the doc after updated
 const updateUser = (email,user) => {
-    User.findOneAndUpdate( { email }, user, { new: true }, (err,doc) =>{
-      if(err){
-          console.log(err);
-          return
-      }else{
+    console.log(user)
+    User.updateOne( { email }, user, { new: true }, (err,doc) =>{
+      if(err) console.log(err);
+      else{
           console.log(doc)
+          mongoose.disconnect()
       }
-      mongoose.disconnect()
+      
     })
 }
 

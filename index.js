@@ -60,10 +60,8 @@ program
   .description('update a user through email')
   .action((email)=>{
     inquirer.prompt(questions)
-    .then( ( email,answers ) => {
+    .then( answers  => {
        updateUser(email, answers)
-     }).then(() => {
-       process.exit()
      })
      .catch(err =>{
        console.log(error) 
