@@ -4,7 +4,8 @@
   "description": "A app that helps you track and also reminds the other party of your important Dates!",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "express": "^4.17.1",
     "inquirer": "^7.1.0",
     "install": "^0.13.0",
-    "mongoose": "^5.9.15"
+    "mongoose": "^5.9.15",
+    "nodemon": "^2.0.4"
   }
 }
