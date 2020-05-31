@@ -8,7 +8,7 @@ An exercise for combining MongoDB and Node.js. `User` module can be CRUD through
 1. Clone the repo.
 2. `cd` into the `UserManagement-cli` directory.
 3. Run `npm install` to install all the depedencies.
-4. Run `node index.js <command>` to use the app.
+4. Run `node cli-index.js <command>` to use the app.
 5. Here are the commands that are available:
 
   Commands:
