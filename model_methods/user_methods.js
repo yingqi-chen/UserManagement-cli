@@ -9,16 +9,18 @@ mongoose.connect('mongodb://localhost:27017/myImportantDates', {
 });
 
 // create a user
-const addUser = (user) =>{
+const addUser = async (user) =>{
     let newUser = new User(user)
-    newUser.save((err, result) => {
-        if (err) console.log(err);
-        else {
-            console.log(result);
-            mongoose.disconnect();
-        }
-    })
+    try{
+        result = await newUser.save()
+        console.log(result);
+        mongoose.disconnect();
+    }catch(err){
+        console.log(err)
+    }
+
 }
+
 
 
 
